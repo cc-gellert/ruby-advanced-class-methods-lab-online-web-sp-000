@@ -37,8 +37,11 @@ class Song
   end 
   
   def self.find_or_create_by_name(name)
-    self.find_by_name(name)
-    self.create_by_name(name) 
+    if !(self.find_by_name(name))
+      self.create_by_name(name) 
+    else 
+      self.find_by_name(name)
+    end 
   end 
 
   def self.alphabetical
@@ -59,7 +62,7 @@ class Song
     artist_name = splits[0]
     namesplit = splits[1].split(".")
     name = namesplit[0]
-    new_song = Song.new(name, artist_name=nil)
+    new_song = Song.new(name, artist_name)
     new_song.save 
     new_song 
   end 
