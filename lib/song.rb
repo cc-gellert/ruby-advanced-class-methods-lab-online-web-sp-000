@@ -16,16 +16,20 @@ class Song
   end
   
   def self.create
-    self.class.initialize(name, artist_name=nil)
-    self.save  
-    self 
+    new_song = Song.new(name, artist_name=nil)
+    new_song.save
+    new_song 
   end 
   
   def self.new_by_name(name)
-    self.class.initialize 
+    new_song = Song.new(name, artist_name=nil)
+    new_song 
   end 
   
   def self.create_by_name(name)
+    new_song = Song.new(name, artist_name=nil)
+    new_song.save 
+    new_song 
   end 
   
   def self.find_by_name(name)
@@ -39,7 +43,6 @@ class Song
 
   def self.alphabetical
     @@all.sort_by {|song| song.name}
-    @@all
   end 
   
   def self.new_from_filename(name)
