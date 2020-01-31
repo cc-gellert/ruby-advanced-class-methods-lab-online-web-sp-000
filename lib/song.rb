@@ -64,6 +64,7 @@ class Song
     names = namesplit[0]
     new_song = Song.new(name, artist_name)
     new_song.save  
+    new_song 
   end 
   
   def self.destroy_all
