@@ -1,3 +1,5 @@
+require pry 
+
 class Song
   attr_accessor :name, :artist_name
   @@all = []
@@ -61,6 +63,7 @@ class Song
     name = name 
     new_song = Song.new_from_filename(name)
     new_song 
+    binding.pry
   end 
   
   def self.destroy_all
