@@ -54,7 +54,6 @@ class Song
     splits = name.split(" - ")
     artist_name = splits[0]
     namesplit = splits[1].split(".")
-    binding.pry
     song_name = namesplit[0]
     new_song = Song.new(song_name, artist_name)
     new_song 
