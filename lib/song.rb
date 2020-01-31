@@ -59,7 +59,7 @@ class Song
     artist_name = splits[0]
     namesplit = splits[1].split(".")
     name = namesplit[0]
-    new_song = Song.new(name, artist_name)
+    new_song = Song.new(name, artist_name=nil)
     new_song.save 
     new_song 
   end 
