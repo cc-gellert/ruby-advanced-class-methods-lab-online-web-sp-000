@@ -57,6 +57,7 @@ class Song
     song_name = namesplit[0]
     new_song = Song.new(song_name, artist_name)
     new_song 
+    binding.pry 
   end 
   
   def self.create_from_filename(name)
